@@ -8,15 +8,10 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/YOUR_USERNAME/flask-k8s-manifests.git
+    repoURL: https://github.com/yams-trimble/argocicd
     targetRevision: HEAD
-    path: .
+    path: k8s
 
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
