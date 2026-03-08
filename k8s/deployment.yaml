@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: docker.io/yams0325/flask-app:latest
+        image: docker.io/yams0325/ci-cd:latest
 
         ports:
         - containerPort: 80
