@@ -13,8 +13,8 @@ GitOps deployment using Helm chart synced by ArgoCD. App: Flask behind Nginx.
 
 ### 1. Build & Push Docker Image
 ```bash
-docker build -t docker.io/yams0325/ci-cd:latest .
-docker push docker.io/yams0325/ci-cd:latest
+docker build -t docker.io/yams0325/ci-cd:v3 .
+docker push docker.io/yams0325/ci-cd:v3
 ```
 *Update `helm-chart/values.yaml` with your image.tag if changed.*
 
