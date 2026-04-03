@@ -28,11 +28,18 @@ git remote add origin https://github.com/yourusername/argocicd.git  # Your repo
 git push -u origin main
 ```
 
-### 3. ArgoCD Repo & App
-Login to ArgoCD: `argocd login <server> --username admin --password <pass>`
+### 3. ArgoCD Repo & App (Private GitHub Repo)
+Login to ArgoCD: `argocd login localhost:8080 --insecure` (after port-forward)
+
+Create GitHub PAT (Settings > Developer > Tokens > Fine-grained > repo perms): https://github.com/settings/tokens
+
 ```bash
-# Add Git repo
-argocd repo add https://github.com/yourusername/argocicd.git
+# Add private Git repo with PAT
+argocd repo add https://github.com/yams-trimble/argocicd.git --username YOUR_GH_USERNAME --password ghp_XXXXXXXXXXXXXXXXXXXX
+
+# Apply app (local file)
+kubectl apply -f argocd-app.yaml -n argocd
+```
 
 # Update argocd-app.yaml with your repoURL, then apply
 kubectl apply -f argocd-app.yaml -n argocd
