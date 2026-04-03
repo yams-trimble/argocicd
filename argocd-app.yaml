@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-app
+  namespace: argocd  # ArgoCD namespace
+  # annotations:
+  #   argocd.argoproj.io/sync-wave: \"-1\"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/yams0325/argocicd.git  # Update to your Git repo URL
+    targetRevision: HEAD
+    path: helm-chart/flask-app
+    helm:
+      releaseName: flask-app
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: image.tag
+          value: latest  # Override with your image tag
+  destination:
+    server: https://kubernetes.default.svc  # In-cluster
+    namespace: default  # Target namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
