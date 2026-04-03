@@ -3,7 +3,7 @@ replicaCount: 2
 image:
   repository: docker.io/yams0325/ci-cd
   pullPolicy: Always
-  tag: "latest"
+  tag: "v4"
 
 service:
   type: NodePort
