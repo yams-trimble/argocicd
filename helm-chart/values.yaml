@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: docker.io/yams0325/ci-cd
+  repository: docker.io/yams0325/flask-app
   pullPolicy: Always
   tag: "v5"
 
