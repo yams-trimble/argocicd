@@ -3,12 +3,12 @@ replicaCount: 2
 image:
   repository: docker.io/yams0325/ci-cd
   pullPolicy: Always
-  tag: "v5"
+  tag: "v6"
 
 service:
   type: NodePort
-  port: 80
-  targetPort: 80
+  port: 80 #service port
+  targetPort: 80 #container port
   nodePort: 30006
 
-namespace: flask
+namespace: flask 

@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "HIIII"
+    return "Flask + Nginx + ArgoCD Pipeline Working"

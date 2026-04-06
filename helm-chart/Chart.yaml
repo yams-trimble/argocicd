@@ -1,5 +1,5 @@
-apiVersion: v2
+apiVersion: v2 #chart format version
 name: flask-app
 description: Helm chart for Flask + Nginx app
-version: 0.1.0
-appVersion: "1.0"
+version: 0.1.0 #chart version you can update this when you make changes to the chart
+appVersion: "1.0" #version of the application, this is just for reference and does not affect the deployment
